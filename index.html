@@ -8,7 +8,8 @@
     <script src="./script.js" defer></script>
     <noscript>
         <style>
-            .toggle-container {
+            .toggle-container,
+            #load-projects {
                 display: none !important;
             }
         </style>
@@ -132,112 +133,10 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <div class="projects-container">
-                <project-card>
-                    <picture><img src="./images/upCourt.jpg" alt="Upcourt Image of welcome page."></picture>
-                    <project-details>
-                        <h2>Up Court Mobile App</h2>
-                        <p><strong>Description: </strong> 
-                            This application is a Full Stack Mobile application that helps basketball fans gain knowledge on how certain players preform depending on team and player match-ups. 
-                            Wether it be player versus player or player versus team, this application will give you well informed information using the ChatGPT API. 
-                        </p>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>React Native</li>
-                            <li>Django (currently switching to NodeJS)</li>
-                            <li>Axios</li>
-                            <li>ContextAPI</li>
-                            <li>EsLint & Prettier</li>
-                            <li>JEST</li>
-                            <li>AI API (GPT or Gemini)</li>
-                        </ul>
-                        <div>
-                            <a href="" class="project-links disabled-demo">Demo</a>
-                            <a href="https://github.com/Migelangel04/Up-Court" class="project-links">Source Code</a>
-                        </div>
-                    </project-details>
-                </project-card>
-                <project-card>
-                    <picture><img src="./images/bountyHunter.jpg" alt="Bounty Hunter Image of welcome page."></picture>
-                    <project-details>
-                        <h2>Bounty Hunter Mobile App</h2>
-                        <p><strong>Description: </strong> 
-                            A mobile application that lets you create and track favors between friends, featuring friend lists, wishlists, customizable profiles, point systems, and more!
-                            This is a 6 person project and the creators (including myself) can be found in the source code. 
-                        </p>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>React Native</li>
-                            <li>Django</li>
-                            <li>Axios</li>
-                            <li>Redux</li>
-                            <li>ESLint & Prettier</li>
-                        </ul>
-                        <div>
-                            <a href="" class="project-links disabled-demo">Demo</a>
-                            <a href="https://github.com/Migelangel04/bounty-hunter" class="project-links">Source Code</a>
-                        </div>
-                    </project-details>
-                </project-card>
-                <project-card>
-                    <picture><img src="./images/etchSketchSS.png" alt="Etch a Sketch Page"></picture>
-                    <project-details>
-                        <h2>Etch A Sketch</h2>
-                        <p><strong>Description: </strong> 
-                            This is a combination of both a sketch pad and etch a sketch that allows the user to draw on a digtal pad. 
-                            Here I will use HTML, CSS, JavaScript, DOM manipulation, and WebDev tools to program this sketch like webpage!
-                        </p>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>JavaScript</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
-                        <div>
-                            <a href="" class="project-links disabled-demo">Demo</a>
-                            <a href="https://github.com/Migelangel04/Etch-A-Sketch" class="project-links">Source Code</a>
-                        </div>
-                    </project-details>
-                </project-card>
-                <project-card>
-                    <picture><img src="./images/TicTacToe_SS.png" alt="Tic-Tac-Toe"></picture>
-                    <project-details>
-                        <h2>Tic Tac Toe</h2>
-                        <p><strong>Description: </strong> 
-                            A browser version of Tic-Tac-Toe with a superhero twist! 
-                            This game is made using JavaScript, HTML, and CSS with an emphasis on JS factory functions.
-                        </p>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>JavaScript</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
-                        <div>
-                            <a href="" class="project-links disabled-demo">Demo</a>
-                            <a href="https://github.com/Migelangel04/Tic-Tac-Toe" class="project-links">Source Code</a>
-                        </div>
-                    </project-details>
-                </project-card>
-                <project-card>
-                    <picture><img src="./images/AdminDashSS.png" alt="Admin Dashboard"></picture>
-                    <project-details>
-                        <h2>Admin Dashboard Design</h2>
-                        <p><strong>Description: </strong> 
-                            Created an Admin Dashboard (style and structure only) that displays personal projects I have done. 
-                            This project implements HTML (with HTML forms) and CSS (with CSS Grid and Flexbox).
-                        </p>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
-                        <div>
-                            <a href="" class="project-links disabled-demo">Demo</a>
-                            <a href="https://github.com/Migelangel04/Admin-Dashboard" class="project-links">Source Code</a>
-                        </div>
-                    </project-details>
-                </project-card>
+            <div class="projects-container"></div>
+            <div id="load-projects">
+                <button id="local-load">Load Local</button>
+                <button id="remote-load">Load Remote</button>
             </div>
         </section>
         <form action="https://httpbin.org/post" method="post" id="contact">

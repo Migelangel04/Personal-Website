@@ -1,3 +1,150 @@
+const API_URL = 'https://my-json-server.typicode.com/Migelangel04/Personal-Website/db';
+let localButton = document.getElementById('local-load');
+let remoteButton = document.getElementById('remote-load');
+let projectsContainer = document.querySelector('.projects-container');
+
+class ProjectCard extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = `
+      <div>
+        <slot></slot>
+      </div>
+    ` 
+  }
+}
+
+class ProjectDetails extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = `
+      <div>
+        <slot></slot>
+      </div>
+    ` 
+  }
+}
+customElements.define('project-card', ProjectCard);
+customElements.define('project-details', ProjectDetails);
+
+localButton.addEventListener('click', () => {
+  try {
+    const projectsData = localStorage.getItem('projects');
+    let projects;
+    if (projectsData) {
+      projects = JSON.parse(projectsData);
+    } else {
+      fetch('./localStorage.json')
+        .then(response => response.json())
+        .then(importedData => {
+          projects = importedData.projects;
+          localStorage.setItem('projects', JSON.stringify(projects));
+        });
+    }
+    projectsContainer.innerHTML = "";
+    projects.forEach((project) => {
+      addProject(project); 
+    })
+
+  } catch (error) {
+    console.error('Error retrieving from localStorage:', error);
+    return null;
+  }
+})
+
+remoteButton.addEventListener('click', () => {
+  fetch(API_URL)
+  .then(response => {
+    // Check if the response is successful
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    // Parse the JSON from the response
+    return response.json();
+  })
+  .then(data => {
+    // Log the data to console
+    console.log('Data received:', typeof(data.projects));
+    projectsContainer.innerHTML = ""
+    data.projects.forEach((project) => {
+     addProject(project); 
+    })
+  })
+  .catch(error => {
+    // Handle any errors that occur during the fetch
+    console.error('Fetch error:', error);
+  });
+})
+
+
+function addProject(project) {
+  const card = document.createElement('project-card');
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  const detailsContainer = document.createElement('project-details');
+
+  // Complete the Image Element
+  img.src = project.image;
+  img.alt = project.imageAlt;
+  picture.appendChild(img);
+
+  //Heading
+  let heading = document.createElement('h2');
+  heading.textContent = project.title;
+  detailsContainer.appendChild(heading);
+
+  // Description
+  let description = document.createElement('p');
+  let desHeader = document.createElement('strong');
+  desHeader.textContent = "Description: ";
+  description.appendChild(desHeader);
+  description.textContent += project.description;
+  detailsContainer.appendChild(description)
+
+  //Technologies Header
+  let techHeader = document.createElement('p');
+  let techHeaderText = document.createElement('strong');
+  techHeaderText.textContent = "Technologies:";
+  techHeader.appendChild(techHeaderText)
+  detailsContainer.appendChild(techHeader)
+
+  //Tech List
+  let techList = document.createElement('ul');
+  project.technologies.forEach((tech) => {
+    let item = document.createElement('li');
+    item.textContent = tech;
+    techList.appendChild(item);
+  })
+  detailsContainer.appendChild(techList);
+
+  //Links
+  let links = document.createElement('div');
+  let demo = document.createElement('a');
+  let source = document.createElement('a');
+  
+  demo.href = project.demoLink;
+  demo.classList.add('project-links');
+  demo.textContent = "Demo"
+  if (project.demoDisabled) {
+    demo.classList.add('disabled-demo');
+  }
+
+  source.href = project.sourceLink;
+  source.classList.add('project-links');
+  source.textContent = "Source Code";
+  
+  links.appendChild(demo);
+  links.appendChild(source);
+  detailsContainer.appendChild(links)
+
+  //Wrap everything up
+  card.appendChild(picture);
+  card.appendChild(detailsContainer)
+  projectsContainer.append(card);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     let contactForm = document.getElementById('contact');
     let name = document.getElementById('name');
