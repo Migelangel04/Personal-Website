@@ -1,10 +1,11 @@
-[
+{
+    "projects": [
     {
-      "image": "/images/upCourt.jpg",
-      "imageAlt": "Upcourt Image of welcome page.",
-      "title": "Up Court Mobile App",
-      "description": "This application is a Full Stack Mobile application that helps basketball fans gain knowledge on how certain players preform depending on team and player match-ups. Wether it be player versus player or player versus team, this application will give you well informed information using the ChatGPT API.",
-      "technologies": [
+        "image": "/images/upCourt.jpg",
+        "imageAlt": "Upcourt Image of welcome page.",
+        "title": "Up Court Mobile App",
+        "description": "This application is a Full Stack Mobile application that helps basketball fans gain knowledge on how certain players preform depending on team and player match-ups. Wether it be player versus player or player versus team, this application will give you well informed information using the ChatGPT API.",
+        "technologies": [
         "React Native",
         "Django (currently switching to NodeJS)",
         "Axios",
@@ -12,66 +13,67 @@
         "EsLint & Prettier",
         "JEST",
         "AI API (GPT or Gemini)"
-      ],
-      "demoLink": "",
-      "demoDisabled": true,
-      "sourceLink": "https://github.com/Migelangel04/Up-Court"
+        ],
+        "demoLink": "",
+        "demoDisabled": true,
+        "sourceLink": "https://github.com/Migelangel04/Up-Court"
     },
     {
-      "image": "/images/bountyHunter.jpg",
-      "imageAlt": "Bounty Hunter Image of welcome page.",
-      "title": "Bounty Hunter Mobile App",
-      "description": "A mobile application that lets you create and track favors between friends, featuring friend lists, wishlists, customizable profiles, point systems, and more! This is a 6 person project and the creators (including myself) can be found in the source code.",
-      "technologies": [
+        "image": "/images/bountyHunter.jpg",
+        "imageAlt": "Bounty Hunter Image of welcome page.",
+        "title": "Bounty Hunter Mobile App",
+        "description": "A mobile application that lets you create and track favors between friends, featuring friend lists, wishlists, customizable profiles, point systems, and more! This is a 6 person project and the creators (including myself) can be found in the source code.",
+        "technologies": [
         "React Native",
         "Django",
         "Axios",
         "Redux",
         "ESLint & Prettier"
-      ],
-      "demoLink": "",
-      "demoDisabled": true,
-      "sourceLink": "https://github.com/Migelangel04/bounty-hunter"
+        ],
+        "demoLink": "",
+        "demoDisabled": true,
+        "sourceLink": "https://github.com/Migelangel04/bounty-hunter"
     },
     {
-      "image": "/images/etchSketchSS.png",
-      "imageAlt": "Etch a Sketch Page",
-      "title": "Etch A Sketch",
-      "description": "This is a combination of both a sketch pad and etch a sketch that allows the user to draw on a digtal pad. Here I will use HTML, CSS, JavaScript, DOM manipulation, and WebDev tools to program this sketch like webpage!",
-      "technologies": [
+        "image": "/images/etchSketchSS.png",
+        "imageAlt": "Etch a Sketch Page",
+        "title": "Etch A Sketch",
+        "description": "This is a combination of both a sketch pad and etch a sketch that allows the user to draw on a digtal pad. Here I will use HTML, CSS, JavaScript, DOM manipulation, and WebDev tools to program this sketch like webpage!",
+        "technologies": [
         "JavaScript",
         "HTML",
         "CSS"
-      ],
-      "demoLink": "",
-      "demoDisabled": true,
-      "sourceLink": "https://github.com/Migelangel04/Etch-A-Sketch"
+        ],
+        "demoLink": "",
+        "demoDisabled": true,
+        "sourceLink": "https://github.com/Migelangel04/Etch-A-Sketch"
     },
     {
-      "image": "/images/TicTacToe_SS.png",
-      "imageAlt": "Tic-Tac-Toe",
-      "title": "Tic Tac Toe",
-      "description": "A browser version of Tic-Tac-Toe with a superhero twist! This game is made using JavaScript, HTML, and CSS with an emphasis on JS factory functions.",
-      "technologies": [
+        "image": "/images/TicTacToe_SS.png",
+        "imageAlt": "Tic-Tac-Toe",
+        "title": "Tic Tac Toe",
+        "description": "A browser version of Tic-Tac-Toe with a superhero twist! This game is made using JavaScript, HTML, and CSS with an emphasis on JS factory functions.",
+        "technologies": [
         "JavaScript",
         "HTML",
         "CSS"
-      ],
-      "demoLink": "",
-      "demoDisabled": true,
-      "sourceLink": "https://github.com/Migelangel04/Tic-Tac-Toe"
+        ],
+        "demoLink": "",
+        "demoDisabled": true,
+        "sourceLink": "https://github.com/Migelangel04/Tic-Tac-Toe"
     },
     {
-      "image": "/images/AdminDashSS.png",
-      "imageAlt": "Admin Dashboard",
-      "title": "Admin Dashboard Design",
-      "description": "Created an Admin Dashboard (style and structure only) that displays personal projects I have done. This project implements HTML (with HTML forms) and CSS (with CSS Grid and Flexbox).",
-      "technologies": [
+        "image": "/images/AdminDashSS.png",
+        "imageAlt": "Admin Dashboard",
+        "title": "Admin Dashboard Design",
+        "description": "Created an Admin Dashboard (style and structure only) that displays personal projects I have done. This project implements HTML (with HTML forms) and CSS (with CSS Grid and Flexbox).",
+        "technologies": [
         "HTML",
         "CSS"
-      ],
-      "demoLink": "",
-      "demoDisabled": true,
-      "sourceLink": "https://github.com/Migelangel04/Admin-Dashboard"
+        ],
+        "demoLink": "",
+        "demoDisabled": true,
+        "sourceLink": "https://github.com/Migelangel04/Admin-Dashboard"
     }
-]
+    ]
+}
