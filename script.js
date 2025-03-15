@@ -35,19 +35,22 @@ localButton.addEventListener('click', () => {
     let projects;
     if (projectsData) {
       projects = JSON.parse(projectsData);
+      projectsContainer.innerHTML = "";
+      projects.forEach((project) => {
+      addProject(project); 
+    })
     } else {
       fetch('./localStorage.json')
         .then(response => response.json())
         .then(importedData => {
           projects = importedData.projects;
           localStorage.setItem('projects', JSON.stringify(projects));
+          projectsContainer.innerHTML = "";
+          projects.forEach((project) => {
+          addProject(project); 
+          })
         });
     }
-    projectsContainer.innerHTML = "";
-    projects.forEach((project) => {
-      addProject(project); 
-    })
-
   } catch (error) {
     console.error('Error retrieving from localStorage:', error);
     return null;
@@ -126,14 +129,18 @@ function addProject(project) {
   
   demo.href = project.demoLink;
   demo.classList.add('project-links');
-  demo.textContent = "Demo"
+  let iconDemo = document.createElement('i');
+  iconDemo.setAttribute('class', 'fa-solid fa-laptop-code');
+  demo.appendChild(iconDemo);
   if (project.demoDisabled) {
     demo.classList.add('disabled-demo');
   }
 
   source.href = project.sourceLink;
   source.classList.add('project-links');
-  source.textContent = "Source Code";
+  let iconSource = document.createElement('i');
+  iconSource.setAttribute('class', 'fa-solid fa-code');
+  source.appendChild(iconSource);
   
   links.appendChild(demo);
   links.appendChild(source);

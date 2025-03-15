@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Migelangel's Portfolio Website</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./script.js" defer></script>
     <noscript>
         <style>
@@ -21,7 +22,7 @@
     <!-- Most of the sections still require content, I am just filling for look and current presentation -->
     
     <header>
-        <a href="#landing-page"><h4>Migelangel Carrillo</h4></a>
+        <a href="#landing-page"><h4><i class="fa-solid fa-house"></i> Migelangel Carrillo</h4></a>
         <div id="interactive-nav">
             <nav>
                 <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -31,7 +32,7 @@
                     <span></span>
                 </label>
                 <ul class="nav-menu">
-                    <li><h5><a href="#about-me" class="link">About Me</a></h5></li>
+                    <li><h5><a href="#about-me" class="link"> About Me</a></h5></li>
                     <li><h5><a href="#experience" class="link">Experience</a></h5></li>
                     <li><h5><a href="#projects" class="link">Projects</a></h5></li>
                     <li><h5><a href="#contact" class="link">Contact</a></h5></li>
@@ -139,7 +140,7 @@
                 <button id="remote-load">Load Remote</button>
             </div>
         </section>
-        <form action="https://httpbin.org/post" method="post" id="contact">
+        <form name="contact" method="post" id="contact" data-netlify="true">
             <fieldset>
                 <legend>Contact Form</legend>
                 <field-input>

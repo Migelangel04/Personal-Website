@@ -492,6 +492,7 @@ project-details div {
     justify-content: center;
     align-items: center;
     gap: 1em;
+    flex-wrap: wrap;
 }
 
 #load-projects > button {
